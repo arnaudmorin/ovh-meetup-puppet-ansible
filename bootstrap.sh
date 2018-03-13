@@ -12,4 +12,5 @@ function boot(){(
         $NAME
 )}
 
-boot jump
+#boot jump
+boot web_puppet

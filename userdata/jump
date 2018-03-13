@@ -98,5 +98,5 @@ EOF
 # Configure puppet
 cd /root/
 mv /etc/puppet/ /etc/puppet.old
-ln -s /root/ovh-meetup-puppet-ansible/puppet/ /etc/puppet
+cp -ar /root/ovh-meetup-puppet-ansible/puppet/ /etc/puppet
 
