@@ -17,5 +17,11 @@
       repo: 'https://github.com/arnaudmorin/demo-flask.git'
       dest: '/opt/demo-flask'
 
+  - name: check if application is not already running
+    shell: /bin/pidof -x start.py
+    register: result
+    ignore_errors: True
+
   - name: run application
     shell: nohup /opt/demo-flask/start.py </dev/null >/dev/null 2>&1 &
+    when: result|failed

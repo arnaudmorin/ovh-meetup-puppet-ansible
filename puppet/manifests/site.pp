@@ -3,7 +3,7 @@ node /^jump/ {
 }
 
 node /^web/ {
-  notify { 'salut': }
+  notify { "Bonjour, je suis ${hostname} / ${ipaddress}": }
 
   package {[
     'python-flask',
