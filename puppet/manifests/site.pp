@@ -7,6 +7,7 @@ node /^web/ {
 
   package {[
     'python-flask',
+    'python-yaml',
     'git',
   ]:
     ensure => installed,
@@ -20,6 +21,6 @@ node /^web/ {
 
   exec { '/opt/demo-flask/start.py &':
     unless    => '/bin/pidof -x start.py',
-    require   => [Package['python-flask'], Exec['clone application']],
+    require   => [Package['python-flask'], Package['python-yaml'], Exec['clone application']],
   }
 }
