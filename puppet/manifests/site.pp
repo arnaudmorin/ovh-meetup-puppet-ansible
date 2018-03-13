@@ -1,0 +1,3 @@
+node /^cat/ {
+  notify { 'salut': }
+}

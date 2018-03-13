@@ -1,0 +1,26 @@
+[main]
+logdir=/var/log/puppet
+vardir=/var/lib/puppet
+ssldir=/var/lib/puppet/ssl
+rundir=/var/run/puppet
+factpath=$vardir/lib/facter
+templatedir=$confdir/templates
+
+server=puppet.global.cloud.ovh.net
+report=true
+pluginsync=true
+environment=production
+
+[master]
+# These are needed when the puppetmaster is run by passenger
+# and can safely be removed if webrick is used.
+ssl_client_header = SSL_CLIENT_S_DN
+ssl_client_verify_header = SSL_CLIENT_VERIFY
+
+modulepath  = /etc/puppet/environments/$environment/modules
+manifestdir = /etc/puppet/environments/$environment/manifests
+manifest    = /etc/puppet/environments/$environment/manifests/site.pp
+
+# External Node Classifier - DaaS connection
+node_terminus = exec
+external_nodes = /scripts/bin/puppet/enc/getInfoFromDaas.py
