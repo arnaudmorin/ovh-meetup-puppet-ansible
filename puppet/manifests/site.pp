@@ -2,7 +2,7 @@ node /^jump/ {
   notify { 'salut': }
 }
 
-node /^webserver/ {
+node /^web/ {
   notify { 'salut': }
 
   package {[
