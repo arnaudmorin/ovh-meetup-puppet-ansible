@@ -25,11 +25,11 @@ apt -y install python chrony lnav crudini ansible python-os-client-config python
 # Add openrc file
 cat <<EOF >/root/openrc
 export OS_AUTH_URL=https://auth.cloud.ovh.net/v2.0/
-export OS_TENANT_ID=FIXME
-export OS_TENANT_NAME=FIXME
-export OS_USERNAME=FIXME
-export OS_PASSWORD=FIXME
-export OS_REGION_NAME="DE1"
+export OS_TENANT_ID=__OS_TENANT_ID__
+export OS_TENANT_NAME=__OS_TENANT_NAME__
+export OS_USERNAME=__OS_USERNAME__
+export OS_PASSWORD=__OS_PASSWORD__
+export OS_REGION_NAME=__OS_REGION_NAME__
 EOF
 
 # Configure ansible
@@ -42,10 +42,10 @@ clouds:
   ovh:
     auth:
       auth_url: https://auth.cloud.ovh.net/v2.0/
-      username: FIXME
-      password: FIXME
-      project_name: FIXME
-    region_name: DE1
+      username: __OS_USERNAME__
+      password: __OS_PASSWORD__
+      project_name: __OS_TENANT_NAME__
+    region_name: __OS_REGION_NAME__
 ansible:
   use_hostnames: True
   expand_hostvars: False
