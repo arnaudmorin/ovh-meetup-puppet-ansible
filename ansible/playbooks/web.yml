@@ -2,8 +2,8 @@
 - hosts: web-ansible
   tasks:
 
-  - name: say hello
-    shell: echo "Bonjour, je suis $HOSTNAME / {{ ansible_default_ipv4.address }}?"
+  - name: say hello from {{ ansible_default_ipv4.address }}
+    shell: echo "Bonjour les amis?"
 
   - name: install dependencies
     apt: name={{item}} state=latest
