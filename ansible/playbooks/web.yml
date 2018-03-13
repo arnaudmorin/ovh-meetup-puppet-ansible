@@ -3,7 +3,7 @@
   tasks:
 
   - name: say hello
-    shell: echo "Bonjour Marvin, connais tu la reponse a la question sur la vie, l'univers et tout le reste?"
+    shell: echo "Bonjour, je suis $HOSTNAME / {{ ansible_default_ipv4.address }}?"
 
   - name: install dependencies
     apt: name={{item}} state=latest
