@@ -1,0 +1,21 @@
+---
+- hosts: web-ansible
+  tasks:
+
+  - name: say hello
+    shell: echo "Bonjour Marvin, connais tu la reponse a la question sur la vie, l'univers et tout le reste?"
+
+  - name: install dependencies
+    apt: name={{item}} state=latest
+    with_items:
+      - python-flask
+      - python-yaml
+      - git
+
+  - name: clone application
+    git:
+      repo: 'https://github.com/arnaudmorin/demo-flask.git'
+      dest: '/opt/demo-flask'
+
+  - name: run application
+    shell: nohup /opt/demo-flask/start.py </dev/null >/dev/null 2>&1 &
