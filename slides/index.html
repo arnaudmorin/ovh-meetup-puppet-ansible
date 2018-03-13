@@ -42,7 +42,7 @@
                     <section data-markdown data-background="data/moutons.gif">
                         # Pet versus Cattle
                     </section>
-                    <section data-markdown data-background="data/configuration.gif">
+                    <section data-markdown data-background="data/configuration2.gif">
                         # Maintien de configuration
                     </section>
                     <section data-markdown data-background="data/pancakemachine.gif">
@@ -50,137 +50,20 @@
                     </section>
                 </section>
 
-
-
-
-                    Demo puppet
-                    j'ai un premier serveur, avec puppet master dessus,
-                    j'ai une vm a cote, sur laquelle je veux installer une celebre application d'affichage d'images de chats
-                    j'installe puppet agent sur cette machine
-                    je demarre l'agent puppet, il recupere sa config et install mon app.
-
-                    Demo ansible
-                    Je suis toujours le premier serveur.
-                    J;ai une seconde VM a cote, sur celle ci je n;installe rien, pas besoin d;agent
-                    Depuis mon premier serveur, je lance une commande ansible-playbook qui va appliquer une config a mon serveur.
-                    Je constate que l'application est installee et que les chats sont mignons.
-
-
-
-                    <section data-markdown data-background="data/nerds2.gif">
-                        # OpenStack
-                        ![OpenStack](data/openstack_logo.png)
-                    </section>
-                </section>
-
                 <section>
                     <section data-markdown>
-                        ## Neutron chez OVH
-                    </section>
-                </section>
-                    <section data-markdown data-separator-notes="^Note:">
-                        ### 2 types de reseaux
-                        * Prive - vRack
-                        * Public - BGP
-                    </section>
-                    <section data-markdown data-separator-notes="^Note:">
-                        ### On demarre ou ?
-                        ![OpenStack](data/neutron_software_ovh4.png)
-
-                        Note:
-                        * ARNAUD
-                        * API extensions
-                            * expose des infos / ressources supplementaires
-                            * implementation de nouvelles fonctionnalites
-                            * utilise aussi par les dev de neutron
-                        * Service plugin
-                            * ajout de fonctionnalites sur ML2
-                        * Type driver
-                            * vRack, au lieu de vlan, vxlan, etc.
-                        * Mechanism driver
-                            * Pilotage d'OVS, des regles openflow, etc.
-                            * Mais aussi pilotage de services comme quagga
-
-                        * Agent L2:
-                            * Full custom OVH: base sur OVS
-                            * Etabli la communication entre interface VM (tap) et le reseau.
-                            * configure les bridges
-                            * configure les regles de secu
-                            * configure la QoS
-
-                        * On ne touche pas au code de neutron lui meme !!!
-                    </section>
-                </section>
-
-                <section>
-                    <section data-markdown data-separator-notes="^Note:" data-background="data/networking2.gif">
-                        ## vRack
+                        # Demo
                     </section>
                     <section data-markdown>
-                        ### C'est quoi ?
-                    </section>
-                    <section data-markdown>
-                        ### Reseau prive de niveau 2
-                        ![vRack](data/schema-isolation.png)
-                    </section>
-                    <section data-markdown>
-                        ### 4000 VLAN possibles!
-                        ![vRack](data/schema-vlan.png)
-                    </section>
-                    <section data-markdown>
-                        ### Faible latence
-                        ###### 40ms entre DC France / Canada
-                        ![vRack](data/schema-datacentre.png)
-                    </section>
-                    <section data-markdown>
-                        ### API et Manager
-                        ![vRack](data/api.gif)
-                    </section>
-                    <section data-markdown>
-                        ### Le vRack dans tous ses details
-                    </section>
-                    <section data-markdown data-separator-notes="^Note:" data-background="data/vrack.png" data-background-size="contain">
-                    </section>
-                    <section data-markdown data-separator-notes="^Note:" data-background="data/vrack_l2_agent_taf.png" data-background-size="contain">
-                    </section>
-                </section>
-
-                <section>
-                    <section data-markdown data-separator-notes="^Note:" data-background="data/networking1.gif">
-                        ## BGP
-                    </section>
-                    <section data-markdown data-separator-notes="^Note:">
-                        ### On demarre ou ?
-                        ![OpenStack](data/neutron_software_ovh4.png)
-                    </section>
-                    <section data-markdown data-transition="fade-out">
-                        ### Architecture standard
-                        ![Neutron Networking](data/networking_no_ovh.png)
-                    </section>
-                    <section data-markdown data-transition="fade-out">
-                        ### Architecture OVH
-                        ![Neutron Networking made in OVH](data/networking_ovh.png)
-                    </section>
-                    <section data-markdown>
-                        ### Points forts
-                        * pas de SPOF
-                            * tous les hosts font du routage
-                            * pas de neutron l3 agent
-                        * moins complexe
-                        * pas de NAT
-                    </section>
-                    <section data-markdown data-separator-notes="^Note:" data-background="data/BGP.png" data-background-size="contain">
-                    </section>
-                    <section data-markdown>
-                        # DEMO
+                        ### 3 serveurs
+                        * jump = rebond / bastion / puppet master / ansible controller 
+                        * web-puppet = server managed with puppet
+                        * web-ansible = server managed with ansible
                     </section>
                 </section>
 
                 <section data-markdown data-background="data/camion_plot.gif">
                     ## Conclusion / Questions ?
-                </section>
-
-                <section data-markdown data-separator-notes="^Note:" data-background="data/ninja_vrack.gif" data-background-size="contain" data-background-color="black">
                 </section>
             </div>
         </div>
